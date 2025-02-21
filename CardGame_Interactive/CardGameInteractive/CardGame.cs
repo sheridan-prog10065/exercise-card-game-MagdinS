@@ -5,6 +5,7 @@ namespace CardGameInteractive;
 /// </summary>
 public class CardGame
 {
+    #region Fields
     /// <summary>
     /// Represents the deck of cards the game is using
     /// </summary>
@@ -24,5 +25,129 @@ public class CardGame
     /// The last card player by the house
     /// </summary>
     private Card _houseCard;
+
+    #endregion
+    
+    #region Constructors
+    /// <summary>
+    /// The constructor of the card game class
+    /// </summary>
+    public CardGame()
+    {
+        _cardDeck = new CardDeck();
+        _score = new Score();
+        _playerCard = null;
+        _houseCard = null;
+    }
+    #endregion
+
+    #region Properties
+
+    public Score Score
+    {
+        get
+        {
+            return _score;
+        }
+        set
+        {
+            _score = value;
+        }
+    }
+
+    public Card PlayerCard
+    {
+        get
+        {
+            return _playerCard;
+        }
+    }
+
+    public Card HouseCard
+    {
+        get
+        {
+            return _houseCard;
+        }
+    }
+
+    public bool IsOver
+    {
+        get
+        {
+            return _cardDeck.CardCount < 2;
+        }
+    }
+
+    public bool PlayerWins
+    {
+        get
+        {
+            return this.IsOver && (_score.PlayerScore > _score.HouseScore);
+        }
+    }
+
+    public bool HouseWins
+    {
+        get
+        {
+            return this.IsOver && (_score.HouseScore > _score.PlayerScore);
+        }
+    }
+
+    #endregion
+    
+    #region Methods
+    /// <summary>
+    /// Plays the game
+    /// </summary>
+    public void Play()
+    {
+        //TODO: Implement Play
+    }
+    
+    /// <summary>
+    /// Play a round of the game
+    /// </summary>
+    /// <returns>
+    ///     +1: the user won the round
+    ///     0: there was tie
+    ///     -1: the house won the round
+    /// </returns>
+    private sbyte PlayRound()
+    {
+        //TODO: Implement PlayRound()
+        return 0;
+    }
+
+    /// <summary>
+    /// Deals the cards to the player and house when a new round starts
+    /// </summary>
+    private void DealCards()
+    {
+    }
+
+    private void SwitchCards()
+    {
+    }
+
+    /// <summary>
+    /// Determine the rank of the card as used in the game. The Ace is the higest hard
+    /// </summary>
+    /// <returns>the rank of the card</returns>
+    private byte DetermineCardRank(Card card)
+    {
+        return 0;
+    }
+
+    private void ShowRoundResult()
+    {
+    }
+
+    private void ShowGameOver()
+    {
+    }
+
+    #endregion
 
 }

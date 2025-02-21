@@ -14,4 +14,20 @@ public struct Score
     /// The number of rounds won by the house
     /// </summary>
     private int _houseScore;
+
+    public int PlayerScore
+    {
+        get
+        {
+            return _playerScore;
+        }
+    }
+
+    public int HouseScore
+    {
+        get
+        {
+            return _houseScore;
+        }
+    }
 }
