@@ -21,6 +21,10 @@ public struct Score
         {
             return _playerScore;
         }
+        set
+        {
+            _playerScore = value;
+        }
     }
 
     public int HouseScore
@@ -28,6 +32,10 @@ public struct Score
         get
         {
             return _houseScore;
+        }
+        set
+        {
+            _houseScore = value;
         }
     }
 }

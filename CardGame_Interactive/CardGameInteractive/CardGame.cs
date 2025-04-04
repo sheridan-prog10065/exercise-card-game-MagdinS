@@ -127,11 +127,13 @@ public class CardGame
         if (cardRank > houseRank)
         {
             //the player won the round
+            _score.PlayerScore++;
             return 1;
         }
         else if (houseRank > cardRank)
         {
             //the house won the round
+            _score.HouseScore++;
             return -1;
         }
         else
