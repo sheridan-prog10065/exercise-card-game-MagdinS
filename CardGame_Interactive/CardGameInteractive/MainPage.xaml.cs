@@ -59,6 +59,12 @@ public partial class MainPage : ContentPage
 	    _btnDealCards.IsEnabled = true;
 	    _btnSwitchCards.IsEnabled = false;
 	    _btnPlayCards.IsEnabled = false;
+	    
+	    //check if the game is over
+	    if (_cardGame.IsOver)
+	    {
+		    ShowGameOver();
+	    }
     }
 
     private void ShowRoundResult(sbyte roundResult)
@@ -100,5 +106,28 @@ public partial class MainPage : ContentPage
 	    
 	    //set the image source of the control
 	    imageControl.Source = ImageSource.FromFile(fileName);
+    }
+    
+    private void ShowGameOver()
+    {
+	    //display who won the game on the game board
+	    if ((_cardGame).PlayerWins)
+	    {
+		    _txtGameBoard.Text = "Player wins!";
+	    }
+	    else if (_cardGame.HouseWins)
+	    {
+		    _txtGameBoard.Text = "House wins!";
+	    }
+	    else
+	    {
+		    _txtGameBoard.Text = "The game is a draw!";
+	    }
+
+	    //disallow the dealing of the cards
+	    _btnDealCards.IsEnabled = false;
+
+	    //TODO: ask the user if they want to play again
+	    //and make it so
     }
 }
