@@ -2,6 +2,8 @@
 
 public partial class MainPage : ContentPage
 {
+	private readonly static ImageSource s_imageSourceCardBack;
+
 	//define the HAS-A relationship to the CardGame
 	private CardGame _cardGame;
 	
@@ -13,10 +15,27 @@ public partial class MainPage : ContentPage
         _cardGame = new CardGame();
     }
 
+    static MainPage()
+    {
+	    s_imageSourceCardBack = ImageSource.FromFile("playing_card_back.jpg");
+    }
+
     private void OnDealCards(object sender, EventArgs e)
     {
+	    //ensure the cards being dealt are turned face down
+	    _imgPlayerCard.Source = s_imageSourceCardBack;
+	    _imgHouseCard.Source = s_imageSourceCardBack;
+	    
 	    //ask the game object to deal cards to player and house
 	    _cardGame.DealCards();
+	    
+	    //inform the user what they can do next: switch or play the cards
+	    _txtGameBoard.Text = "You can play the round or swap cards with the house";
+
+	    //allow the user play by enabling the action buttons
+	    _btnDealCards.IsEnabled = false;
+	    _btnSwitchCards.IsEnabled = true;
+	    _btnPlayCards.IsEnabled = true;
     }
 
     private void OnSwitchCards(object sender, EventArgs e)
