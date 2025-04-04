@@ -35,6 +35,7 @@ public class CardGame
     public CardGame()
     {
         _cardDeck = new CardDeck();
+        _cardDeck.ShuffleCards();
         _score = new Score();
         _playerCard = null;
         _houseCard = null;
