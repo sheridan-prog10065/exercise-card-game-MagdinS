@@ -80,4 +80,42 @@ public class CardDeck
             _cardList[randPos] = crtCard;
         }
     }
+
+    /// <summary>
+    /// Extracts two random cards from the deck
+    /// </summary>
+    /// <param name="cardOne">first card output</param>
+    /// <param name="cardTwo">second card output</param>
+    /// <returns>true if the extraction was possible, false if there are no cards left</returns>
+    public bool GetPairOfCards(out Card cardOne, out Card cardTwo)
+    {
+        //check that we have enough cards for the extraction
+        if (_cardList.Count >= 2)
+        {
+            //extract the first card
+            //generate a random position to extract the card from 
+            int randPos = CardDeck.Randomizer.Next(_cardList.Count);
+            
+            //access the card at the random index
+            cardOne = _cardList[randPos];
+            
+            //remove the card from the deck
+            _cardList.RemoveAt(randPos);
+            
+            //extract the second card
+            randPos = CardDeck.Randomizer.Next(_cardList.Count);
+            cardTwo = _cardList[randPos];
+            _cardList.RemoveAt(randPos);
+
+            //indicate the success of the extraction
+            return true;
+        }
+        else
+        {
+            //there are not enough cards, the game must be over
+            cardOne = null;
+            cardTwo = null;    
+            return false;
+        }
+    }
 }
