@@ -30,18 +30,21 @@
         <!-- Game Control Buttons -->
         <Button x:Name="_btnDealCards" Text="Deal"
                 Grid.Row="1" Grid.Column="0" 
-                HorizontalOptions="Fill" Margin="0, 20" FontSize="36"/>
+                HorizontalOptions="Fill" Margin="0, 20" FontSize="36"
+                Clicked="OnDealCards"/>
 
         <Button  x:Name="_btnSwitchCards" Text="Switch"   
                  Grid.Row="1" Grid.Column="1"
                  HorizontalOptions="Center" Margin="0, 20" FontSize="36"
                  WidthRequest="300" 
-                 IsEnabled="False"/>
+                 IsEnabled="False"
+                 Clicked="OnSwitchCards"/>
 
         <Button x:Name="_btnPlayCards" Text="Play" 
                 Grid.Row="1" Grid.Column="2" 
                 HorizontalOptions="Fill" Margin="0, 20" FontSize="36" 
-                IsEnabled="False"/>
+                IsEnabled="False"
+                Clicked="OnPlayCards"/>
 
         <!-- Game Board UI  showing the cards and notification area  -->
         <Image x:Name="_imgPlayerCard" Grid.Row="2" Grid.Column="0" Source="playing_card_back.jpg"  />
