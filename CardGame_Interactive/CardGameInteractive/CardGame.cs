@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace CardGameInteractive;
 
 /// <summary>
@@ -35,6 +37,7 @@ public class CardGame
     public CardGame()
     {
         _cardDeck = new CardDeck();
+        _cardDeck.ShuffleCards();
         _score = new Score();
         _playerCard = null;
         _houseCard = null;
@@ -103,7 +106,6 @@ public class CardGame
     /// </summary>
     public void Play()
     {
-        //TODO: Implement Play
     }
     
     /// <summary>
@@ -143,10 +145,13 @@ public class CardGame
     /// </summary>
     public void DealCards()
     {
+        bool cardsDealt = _cardDeck.GetPairOfCards(out _playerCard, out _houseCard);
+        Debug.Assert(cardsDealt, "Cards could not be dealt. The deck is empty");
     }
 
     public void SwitchCards()
     {
+        _cardDeck.ExchangeCards(ref _playerCard, ref _houseCard);
     }
 
     /// <summary>
