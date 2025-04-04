@@ -4,7 +4,67 @@
              x:Class="CardGameInteractive.MainPage"
              Shell.NavBarIsVisible="False">
 			 
-	<Label Text="Interactive Card Game Exercise Startup Template"
-	       VerticalOptions="Center"
-	       HorizontalOptions="Center"/> 
+    <Grid RowDefinitions="200, Auto, *, Auto" ColumnDefinitions="*, 2*, *"
+          Margin="20">
+        
+        <!-- Game Score Board UI -->
+        <Border Grid.Row="0" Grid.Column="0"
+                HorizontalOptions="Start" VerticalOptions="Center" 
+                HeightRequest="104" WidthRequest="124" 
+                Stroke="#FF948E8E" StrokeThickness="3" StrokeShape="RoundRectangle 2" >
+            <Label x:Name="_txtPlayerScore" LineBreakMode="WordWrap" Text="15" FontSize="72" HorizontalTextAlignment="Center"/>
+        </Border>
+
+        <Label Grid.Row="0" Grid.Column="1" 
+               Text="Card Game" 
+               LineBreakMode="WordWrap" FontSize="80"
+               HorizontalOptions="Center" VerticalOptions="Center"/>
+
+        <Border Grid.Row = "0" Grid.Column="2"
+                HorizontalOptions="End" VerticalOptions="Center" 
+                HeightRequest="104" WidthRequest="124" 
+                Stroke="#FF948E8E" StrokeThickness="3" StrokeShape="RoundRectangle 2"  >
+            <Label x:Name="_txtHouseScore" LineBreakMode="WordWrap" Text="4" FontSize="72" HorizontalTextAlignment="Center"/>
+        </Border>
+        
+        <!-- Game Control Buttons -->
+        <Button x:Name="_btnDealCards" Text="Deal"
+                Grid.Row="1" Grid.Column="0" 
+                HorizontalOptions="Fill" Margin="0, 20" FontSize="36"/>
+
+        <Button  x:Name="_btnSwitchCards" Text="Switch"   
+                 Grid.Row="1" Grid.Column="1"
+                 HorizontalOptions="Center" Margin="0, 20" FontSize="36"
+                 WidthRequest="300" 
+                 IsEnabled="False"/>
+
+        <Button x:Name="_btnPlayCards" Text="Play" 
+                Grid.Row="1" Grid.Column="2" 
+                HorizontalOptions="Fill" Margin="0, 20" FontSize="36" 
+                IsEnabled="False"/>
+
+        <!-- Game Board UI  showing the cards and notification area  -->
+        <Image x:Name="_imgPlayerCard" Grid.Row="2" Grid.Column="0"  />
+        
+        <Border Grid.Column="1" Grid.Row="2" Margin="40, 100" 
+                StrokeThickness="10"  StrokeShape="RoundRectangle 10">
+            <Label x:Name="_txtGameBoard" Text="Player Wins" 
+                   FontSize="48" LineBreakMode="WordWrap"  
+                   VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+        </Border>
+        
+        <Image x:Name="_imgHouseCard" 
+               Grid.Row="2" Grid.Column="2"/>
+        
+        <!-- Player / House Indicators -->
+        <Label Text="Player" 
+               Grid.Row="3" Grid.Column="0"
+               FontSize="48" LineBreakMode="WordWrap" 
+               HorizontalOptions="Center" VerticalOptions="Start"  />
+        <Label 
+               Grid.Row="3" Grid.Column="2" Text="House" 
+               FontSize="48" LineBreakMode="WordWrap" 
+               HorizontalOptions="Center" VerticalOptions="Start"  />
+
+    </Grid>
 </ContentPage>
