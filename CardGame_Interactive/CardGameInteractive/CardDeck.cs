@@ -118,4 +118,10 @@ public class CardDeck
             return false;
         }
     }
+
+    public void ExchangeCards(ref Card cardOne, ref Card cardTwo)
+    {
+        //swap the two cards using tuple deconstruction
+        (cardOne, cardTwo) = (cardTwo, cardOne);
+    }
 }
