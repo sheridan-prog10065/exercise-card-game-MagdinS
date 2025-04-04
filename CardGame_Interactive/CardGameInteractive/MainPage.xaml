@@ -18,7 +18,7 @@
         <Label Grid.Row="0" Grid.Column="1" 
                Text="Card Game" 
                LineBreakMode="WordWrap" FontSize="80"
-               HorizontalOptions="Center" VerticalOptions="Center"/>
+               HorizontalOptions="Center" VerticalOptions="Center"/>±
 
         <Border Grid.Row = "0" Grid.Column="2"
                 HorizontalOptions="End" VerticalOptions="Center" 
