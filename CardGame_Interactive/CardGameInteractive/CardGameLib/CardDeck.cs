@@ -1,4 +1,4 @@
-namespace CardGameInteractive;
+namespace CardGameLib;
 
 /// <summary>
 /// Defines the card deck as a list of cards 

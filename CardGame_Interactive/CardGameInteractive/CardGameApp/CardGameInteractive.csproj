@@ -52,4 +52,8 @@
       <Folder Include="Resources\Images\" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\CardGameLib\CardGameLib.csproj" />
+    </ItemGroup>
+
 </Project>

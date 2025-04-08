@@ -1,4 +1,4 @@
-namespace CardGameInteractive;
+namespace CardGameLib;
 
 /// <summary>
 /// Defines the types suits that cards have
