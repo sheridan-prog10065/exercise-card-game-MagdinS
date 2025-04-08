@@ -1,4 +1,4 @@
-﻿namespace CardGameInteractive;
+﻿namespace CardGameApp;
 
 public partial class App : Application
 {

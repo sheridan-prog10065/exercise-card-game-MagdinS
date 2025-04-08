@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Runtime;
 
-namespace CardGameInteractive;
+namespace CardGameApp;
 
 [Application]
 public class MainApplication : MauiApplication

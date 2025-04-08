@@ -1,6 +1,6 @@
 using System.Diagnostics;
 
-namespace CardGameInteractive;
+namespace CardGameApp;
 
 /// <summary>
 /// Defines the card game that implements the game logic and holds the card deck

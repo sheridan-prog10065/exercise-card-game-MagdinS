@@ -1,4 +1,4 @@
-﻿namespace CardGameInteractive;
+﻿namespace CardGameApp;
 
 public static class MauiProgram
 {
